@@ -31,4 +31,4 @@ df = df.append({
 
 
 # Describe
-print(df.agg(['min', 'median', 'max']).round(2).T)
+print(df.describe().round(2).T)
