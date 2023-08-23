@@ -34,4 +34,4 @@ for i in range(n_ts):
 
 
 # Describe
-print(df.mean().round(6).T)
+print(df.mean().round(6)['DFA'])
