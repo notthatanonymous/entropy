@@ -18,7 +18,7 @@ for i, b in enumerate(betas):
 df = pd.DataFrame()
 
 for i in range(n_ts):
-    df = pd.concate([df, pd.DataFrame({
+    df = pd.concat([df, pd.DataFrame({
         'PermEnt': ent.perm_entropy(ts[i], order=3, normalize=True),
         'SVDEnt' : ent.svd_entropy(ts[i], order=3, normalize=True),
         'SpecEnt' : ent.spectral_entropy(ts[i], sf, normalize=True, 
