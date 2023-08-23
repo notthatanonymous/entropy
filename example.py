@@ -17,8 +17,7 @@ for i, b in enumerate(betas):
 
 df = pd.DataFrame()
 
-for i in range(n_ts):
-    df = pd.concat([df, pd.DataFrame({
+df = df.append({
         'PermEnt': ent.perm_entropy(ts[i], order=3, normalize=True),
         'SVDEnt' : ent.svd_entropy(ts[i], order=3, normalize=True),
         'SpecEnt' : ent.spectral_entropy(ts[i], sf, normalize=True, 
@@ -28,7 +27,7 @@ for i in range(n_ts):
         'PetrosianFD': ent.petrosian_fd(ts[i]),
         'KatzFD': ent.katz_fd(ts[i]),
         'HiguchiFD': ent.higuchi_fd(ts[i]),
-        'DFA': ent.detrended_fluctuation(ts[i])})], ignore_index=True)
+        'DFA': ent.detrended_fluctuation(ts[i])}, ignore_index=True)
 
 
 # Describe
