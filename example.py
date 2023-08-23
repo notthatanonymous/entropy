@@ -18,7 +18,7 @@ for i, b in enumerate(betas):
 df = pd.DataFrame()
 
 for i in range(n_ts):
-    df = df.append({
+    df = df.concate({
         'PermEnt': ent.perm_entropy(ts[i], order=3, normalize=True),
         'SVDEnt' : ent.svd_entropy(ts[i], order=3, normalize=True),
         'SpecEnt' : ent.spectral_entropy(ts[i], sf, normalize=True, 
@@ -32,4 +32,4 @@ for i in range(n_ts):
 
 
 # Describe
-print(df.agg(['min', 'median', 'max']).round(2).T)
+print(df.agg(['min', 'median', 'mean', 'max']).round(2).T)
