@@ -3,4 +3,4 @@ scipy
 scikit-learn
 numba
 stochastic
-pandas==1.3.5
+pandas
